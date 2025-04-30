@@ -7,7 +7,7 @@ void setup() {
   Serial.println("Hello World");
   Wire.beginTransmission(0x22);
   Wire.write(0x00);
-  uint16_t data = 500;
+  int16_t data = 500;
   Wire.write((uint8_t*)&data, 2);
   Wire.endTransmission();
   delay(2000);
@@ -15,6 +15,7 @@ void setup() {
   Wire.write(0x00);
   data = 16000;
   Wire.write((uint8_t*)&data, 2);
+  Wire.endTransmission();
 
 // write your initialization code here
 }
